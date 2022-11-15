@@ -1,8 +1,13 @@
 package ruggy.students;
 
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.ArrayList;
 import java.util.List;
-import java.time.*;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class StudentService {
     public List<Student> hello() {
 		return List.of(
@@ -17,6 +22,6 @@ public class StudentService {
 	}
 
     public List<Student> getStudents() {
-        return null;
+        return new ArrayList<>();
     }
 }
