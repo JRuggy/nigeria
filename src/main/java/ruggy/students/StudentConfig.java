@@ -8,28 +8,29 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-
 @Configuration
 public class StudentConfig {
 
     @Bean
     CommandLineRunner commandLineRunner(StudentRepository repository) {
         return args -> {
-            Student mariam = new Student(
-                    "Mariam",
+            Student jarred = new Student(
+                    "Jarred",
+                    "jarred@icloud.com",
+                    LocalDate.of(2022, Month.MAY, 26));
+
+            Student ruggy = new Student(
+                    "Ruggy",
                     "jastonruggy@icloud.com",
-                    LocalDate.of(2000, Month.JANUARY, 5),
-                    21);
+                    LocalDate.of(1999, Month.SEPTEMBER, 4));
 
-            Student alex = new Student(
-                    "Alex",
-                    "kaka@icloud.com",
-                    LocalDate.of(1999, Month.JANUARY, 5),
-                    21);
+            Student hope = new Student(
+                    "Hope",
+                    "hope@icloud.com",
+                    LocalDate.of(2003, Month.SEPTEMBER, 15));
 
-                    repository.saveAll(
-                        List.of(mariam,alex)
-                    );
+            repository.saveAll(
+                    List.of(jarred, ruggy, hope));
         };
     }
 }
